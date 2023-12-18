@@ -8,6 +8,20 @@
         <title>viewport</title>
         <style>
             
+            .container {
+            display: flex;
+            align-items: center;
+            } 
+
+            .your-button {
+
+                position: relative;
+                top: -2px; /* Move 20px down from its normal position */
+                right: 50px; /* Move 10px to the right from its normal position */
+                size:
+
+            }
+            
             /* placeholder alignment (shit) */
             input[type="memory"]::placeholder {
             text-align: center;
@@ -46,51 +60,26 @@
             </audio>
         </div>
 
-        <!-- <form> 
-        <h1> What is your name?</h1> <br>
-    <input type="text" name="field1" placeholder="first"><br>
-    <input type="text" name="field2" placeholder="last"><br>
-    <input type="submit" value="Submit"> -->
-
-<!-- 
-    <label for="story">Tell us a memory:</label> -->
-
-    <!-- <form action="action_page.php" method="post">
-        <input type="memory" name="memory" value="" placeholder="memory" style="width: 300px; height: 300px;"> <br> <br>
-        <input type="submit" value="Submit">
-      </form> -->
-
-
-
       <label for="story" style="color:red;">What Are You Afraid Of?</label>
 
-
+      <div class="container">
       <form id="my-form" action="https://formspree.io/f/xkndwjly" method="POST">
         <textarea id="memory" name="memory" rows="6" cols="45" type="memory" name="memory" placeholder=""></textarea>
-        <!-- <textarea type="memory" name="memory" value="" placeholder="memory"> -->
-        <!-- <br> <input type="submit" value="commit"> -->
-        <!-- <label>Email:</label>
-        <input type="email" name="email" />
-        <label>Message:</label>
-        <input type="text" name="message" /> --> <br>
+        <br>
         <button id="my-form-button">commit</button>
         <p id="my-form-status"></p>
-      </form>
+      </form> 
+      <a href="index.html"> <br> <br> <br> <br> <br> <br> <br>
+        <div class="your-button"> 
+        <button> return </button> 
+      </div>
+    </a>
+      </div>
+     
+        
+   
 
-      <!-- <form action="https://formspree.io/f/xkndwjly" method="post"> 
-        <textarea id="memory" name="memory" rows="6" cols="45" type="memory" name="memory" placeholder=""></textarea> -->
-        <!-- <textarea type="memory" name="memory" value="" placeholder="memory"> -->
-        <!-- <br> <input type="submit" value="commit">
-        </form> -->
-
-      <!--new but still shit form submission-->
-    <!-- <form action="https://formspree.io/f/xkndwjly" method="post"> 
-        <textarea id="memory" name="memory" rows="6" cols="45" type="memory" name="memory" placeholder=""></textarea> -->
-        <!-- <textarea type="memory" name="memory" value="" placeholder="memory"> -->
-        <!-- <br> <input type="submit" value="commit"> -->
-    
         <!--old form submission script -->
-
         <!-- <form action="action_page.php" method="post"> 
             <textarea id="memory" name="memory" rows="6" cols="45" type="memory" name="memory" placeholder=""></textarea> -->
             <!-- <textarea type="memory" name="memory" value="" placeholder="memory"> -->
@@ -98,6 +87,8 @@
             
         </form> -->
     
+
+        <!--script for form-->
         <script>
             var form = document.getElementById("my-form");
             
@@ -113,19 +104,19 @@
                 }
               }).then(response => {
                 if (response.ok) {
-                  status.innerHTML = "Thanks for your submission!";
+                  status.innerHTML = "";
                   form.reset()
                 } else {
                   response.json().then(data => {
                     if (Object.hasOwn(data, 'errors')) {
-                      status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                      status.innerHTML = data["errors"].map(error => error[""]).join(", ")
                     } else {
-                      status.innerHTML = "Oops! There was a problem submitting your form"
+                      status.innerHTML = ""
                     }
                   })
                 }
               }).catch(error => {
-                status.innerHTML = "Oops! There was a problem submitting your form"
+                // status.innerHTML = ""
               });
             }
             form.addEventListener("submit", handleSubmit)
