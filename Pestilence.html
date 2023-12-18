@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device_width, initial-scale=1">
+        <link rel="stylesheet" href="ASSETS/CSS/mstyle.css">
         <title>viewport</title>
         <style>
             
@@ -26,6 +27,7 @@
             border-radius: 5px;
             border: 1px solid #000000;
             box-shadow: 1px 1px 1px #999;
+            background-color: red;
             }
 
             label {
@@ -39,7 +41,7 @@
     <body> 
         
         <div align="center"> 
-            <audio controls autoplay hidden>
+            <audio controls autoplay hidden loop>
                 <source src="ASSETS/MUSIC/zoey.mp3">
             </audio>
         </div>
@@ -60,10 +62,10 @@
 
 
 
-      <label for="story">What Are You Afraid Of?</label>
+      <label for="story" style="color:red;">What Are You Afraid Of?</label>
 
     <form action="action_page.php" method="post"> 
-        <textarea id="memory" name="memory" rows="6" cols="45" type="memory" name="memory" placeholder="" ></textarea>
+        <textarea id="memory" name="memory" rows="6" cols="45" type="memory" name="memory" placeholder=""></textarea>
         <!-- <textarea type="memory" name="memory" value="" placeholder="memory"> -->
         <br> <input type="submit" value="commit">
         
